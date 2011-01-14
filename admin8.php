@@ -1,6 +1,6 @@
 <?php
 /**
-* @version   $Id: admin8.php 5 2010-05-14 13:16:54Z edo888 $
+* @version   $Id$
 * @package   Admin Forever
 * @copyright Copyright (C) 2008 - 2010 Edvard Ananyan. All rights reserved.
 * @license   http://www.gnu.org/licenses/gpl.html GNU/GPL
