@@ -40,7 +40,7 @@ class  plgSystemAdmin8 extends JPlugin {
     function onAfterRender() {
 
         $timeout = intval(JFactory::getApplication()->getCfg('lifetime') * 60 / 3 * 1000);
-        $url = JURI::base();
+        $url = JURI::base() . 'index.php?option=com_cpanel';
 
         $javascript = <<<EOM
 
