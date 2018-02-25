@@ -3,18 +3,20 @@
 * @version   $Id$
 * @package   Admin Forever
 * @copyright Copyright (C) 2008 - 2010 Edvard Ananyan. All rights reserved.
+* @copyright Copyright (C) 2018 ecfirm.net. All rights reserved.
 * @license   http://www.gnu.org/licenses/gpl.html GNU/GPL
 */
 
-defined('_JEXEC') or die('Restricted access');
+use Joomla\CMS\Factory;
+use Joomla\CMS\Plugin\CMSPlugin;
+use Joomla\CMS\Uri\Uri;
 
-jimport('joomla.plugin.plugin');
+defined('_JEXEC') or die('Restricted access');
 
 /**
  * Admin Forever plugin
- *
  */
-class  plgSystemAdmin8 extends JPlugin {
+class  plgSystemAdmin8 extends CMSPlugin {
     /**
      * Constructor
      *
@@ -25,22 +27,20 @@ class  plgSystemAdmin8 extends JPlugin {
      */
     function __construct(& $subject, $config) {
         // check to see if the user is admin
-        $user = JFactory::getUser();
-        if(!$user->authorise('manage', 'com_banners'))
-            return;
+        $user = Factory::getUser();
+        if(!$user->authorise('manage', 'com_banners')) return;
 
         parent::__construct($subject, $config);
     }
 
     /**
      * Add JavaScript reloader
-     *
      * @access public
      */
     function onAfterRender() {
 
-        $timeout = intval(JFactory::getApplication()->getCfg('lifetime') * 60 / 3 * 1000);
-        $url = JURI::base() . 'index.php?option=com_cpanel';
+        $timeout = intval(Factory::getApplication()->get('lifetime') * 60 / 3 * 1000);
+        $url = Uri::base() . 'index.php?option=com_cpanel';
 
         $javascript = <<<EOM
 
@@ -92,9 +92,10 @@ class  plgSystemAdmin8 extends JPlugin {
 
 EOM;
 
-        $content = JResponse::getBody();
+        $app = Factory::getApplication();
+        $content = $app->getBody();
         $content = str_replace('</body>', $javascript . '</body>', $content);
-        JResponse::setBody($content);
+        $app->setBody($content);
 
     }
 }

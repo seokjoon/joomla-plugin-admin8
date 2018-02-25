@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
-<extension type="plugin" group="system" version="1.6" method="upgrade">
+<extension type="plugin" group="system" version="4.0" method="upgrade">
     <name>System - Admin Forever</name>
-    <author>Edvard Ananyan</author>
-    <creationDate>January 2011</creationDate>
-    <copyright>Copyright (C) 2008 - 2013 Edvard Ananyan. All rights reserved.</copyright>
+    <author>Seok Joon Lee</author>
+    <creationDate>2018-02-25</creationDate>
+    <copyright>Copyright (C) 2008 - 2013 Edvard Ananyan. Copyright (C) 2018 ecfirm.net. All rights reserved.</copyright>
     <license>http://www.gnu.org/licenses/gpl.html GNU/GPL</license>
-    <authorEmail>edo888@gmail.com</authorEmail>
-    <authorUrl>http://edo.webmaster.am</authorUrl>
-    <version>0.9.3</version>
+    <authorEmail>seokjoon@gmail.com</authorEmail>
+    <authorUrl>http://ecfirm.net/</authorUrl>
+    <version>4.0</version>
     <description>This plugin will prevent admin session expiration, so you will never be logged out when you don't want it to happen. Don't forget to enable the plugin from Extensions -> Plug-in Manager</description>
 
     <files>
